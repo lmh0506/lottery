@@ -6,4 +6,5 @@ import args from './util/args' // 命令行参数解析
 gulp.task('css', () => {
   return gulp.src('app/**/*.css')
     .pipe(gulp.dest('server/public'))
+    .pipe(gulpif(args.watch, livereload()))
 })
